@@ -1,5 +1,6 @@
 import React from 'react';
 import ModaLProfile from './Components/Modal'
+// import RightComponent from './Components/RightComponent'
 
 import axios from 'axios';
 import './App.css';
@@ -71,7 +72,9 @@ class App extends React.Component{
   return (
     <div className="App">
       <header className="App-header">
-        <div className="row" style={{}}>
+        <div className="RightComponent">
+
+          <div className="container" style={{}}>
           {this.state.arr.map((item, i)=> (
                       <div>
             <a onClick={() => this.checkBoxThatOpensModalFunction(i)}>
@@ -83,6 +86,7 @@ class App extends React.Component{
           </div>
           ))}
           </div>
+        </div>
 
         <ModaLProfile 
           show={this.state.checkBoxThatOpensModal} 

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App-logo {
@@ -19,4 +20,12 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.RightComponent{
+  position: absolute;
+  height: 100vh;
+  width: 50%;
+  right:0;
+  background: #09d3ac;
 }
