@@ -1,11 +1,20 @@
 import React from 'react';
 import ModaLProfile from './Components/Modal'
-// import RightComponent from './Components/RightComponent'
+import UserProfile from './Components/UserProfile'
 
 import axios from 'axios';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const user= {
+  name: 'Vasile Popescu',
+  age: '99',
+  homeworld: 'Polis massa',
+  gender: 'Male',
+  affiliations: "Alliance to Restore the Republic",
+  image: "https://bootdey.com/img/Content/avatar/avatar7.png"
+
+}
 
 class App extends React.Component{
   constructor(props){
@@ -72,16 +81,23 @@ class App extends React.Component{
   return (
     <div className="App">
       <header className="App-header">
+
         <div className="RightComponent">
+          <div className="rightTop">
+          <h2>We found these people for you</h2>
+          </div>
 
-          <div className="container" style={{}}>
+          <div className="container results" >
           {this.state.arr.map((item, i)=> (
-                      <div>
-            <a onClick={() => this.checkBoxThatOpensModalFunction(i)}>
-              <img src={item.image} style={{height: '250px', width: '200px'}} className="luke" alt="luke" />
-            </a>
-
-            <p>{item.name}</p>
+                      <div className="profileCardRight">
+            <UserProfile
+          onClick={() => this.checkBoxThatOpensModalFunction(i)}
+          image={item.image}
+          height={item.height}
+          name={item.name}
+          gender={item.gender}
+          homeworld={item.homeworld}
+          />
            
           </div>
           ))}
@@ -101,6 +117,17 @@ class App extends React.Component{
           scrollable={true}
           size='lg'/>
 
+        <div className="LeftComponent">
+          <div className="row leftHeader">
+            <div className="col-4">
+              <img src={this.state.arr[0].image} style={{height:'70px', width:'70px', borderRadius:'50%'}} alt=""/>
+            </div>
+            <div className="col-8 userHello">
+              Hello USERNAME
+            </div>
+
+          </div>
+        </div>
       </header>
     </div>
   );

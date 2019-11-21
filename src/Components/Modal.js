@@ -49,7 +49,7 @@ export default class ModalComponent extends React.Component {
         }
       return (
           <div>
-              <Modal className="bg-dark"
+              <Modal className="bg-dark openedModal"
                   show={this.state.show}
                   keyboard={true}
                   onEscapeKeyDown={this.toggle}>
