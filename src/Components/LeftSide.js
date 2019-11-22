@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route, Link } from 'react-router-dom'
 
 
-
-
 class LeftSide extends Component {
 
     render() {

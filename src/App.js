@@ -47,7 +47,7 @@ class App extends React.Component{
 
 loadJson = () => {
     const json = window.localStorage.getItem(LOCALSTORAGE_KEY)
-    // this.setState({ json })
+    this.setState({ json })
     console.log(json);
 }
 
@@ -67,7 +67,7 @@ getData = (json) => {
     json: json
   })
   setTimeout( () => this.saveJson(), 1000)
-  // setTimeout( () => this.loadJson(), 5000);
+  // setTimeout( () => this.loadJson(), 1500);
 }
 
 
@@ -92,6 +92,9 @@ getData = (json) => {
           <Homepage saveJson={this.getData} signUp={this.enterTheApp.bind(this)}/>
         )
       } else {
+        if(this.state.json == {}){
+          this.loadJson();
+        } 
         return (
         <div className="App">
       <header className="App-header">
@@ -102,7 +105,7 @@ getData = (json) => {
         <Route path='/my-messages' component={MessagesRightSection}/>
       </Switch>
   
-        <LeftSide userImage={user.image} userName={user.name}/>
+        <LeftSide userImage={user.image} userName={this.state.json.firstName}/>
 
       </header>
     </div>

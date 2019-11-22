@@ -79,11 +79,13 @@ class Homepage extends React.Component {
             () => this.sendData(),
             1000
         )
-        this.props.signUp(true)
+        // this.props.signUp(true)
     }
 
     sendData = () => {
         this.props.saveJson(this.state.json);
+
+        this.props.signUp(true)
     }
 
     render() {
