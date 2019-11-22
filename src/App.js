@@ -99,9 +99,9 @@ getData = (json) => {
         return (
         <div className="App">
       <header className="App-header">
-
+          <RightComponent />
       <Switch>
-        <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>
+        <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId} write={true}/>}/>
         <Route path='/profiles-available' render={(props) => <RightComponent newMatch={this.addMatch.bind(this)} />}/>
         <Route path='/my-messages' render={(props) => <MessagesComponent userImage={user.image}/>
 }/>

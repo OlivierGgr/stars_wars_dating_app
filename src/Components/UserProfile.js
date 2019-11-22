@@ -19,7 +19,15 @@ class UserProfile extends Component {
             </div>
           );
     }
+    writeBtn = () => {
+        if(this.props.matched){
+            return(
+                <button>Write a message</button>
+            )
+        }
+    }
     render() {
+ 
         return (
             <div className="container profile-page">
                 <div className="row">
@@ -40,6 +48,7 @@ class UserProfile extends Component {
                                             <li>{this.props.gender} </li>
                                             <li>{this.props.homeworld} </li>
                                             <li>Likes :{this.affiliationList()}</li>
+                                            {this.writeBtn()}
                                         </ul>
 
                                         {/* <div>
