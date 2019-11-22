@@ -1,8 +1,9 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import UserProfile from './Components/UserProfile.js'
+// import UserProfile from './Components/UserProfile.js';
 import LeftSide from './Components/LeftSide';
+import MessagesComponent from './Components/MessagesComponent.js';
 
 
 const user= {
@@ -20,7 +21,8 @@ function App() {
     <div >
       <header>
         {/* <UserProfile {...user}/> */}
-        <LeftSide userImage={user.image} userName={user.name}/>
+        {/* <LeftSide userImage={user.image} userName={user.name}/> */}
+        <MessagesComponent userImage={user.image}/>
       </header>
     </div>
   );
