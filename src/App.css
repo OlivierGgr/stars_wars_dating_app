@@ -36,3 +36,11 @@
 .containerButtons {
   text-align: center;
 }
+
+.container {
+  background: red;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  width: 100%
+}
