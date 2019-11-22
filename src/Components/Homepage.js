@@ -85,7 +85,7 @@ class Homepage extends React.Component {
     render() {
         console.log('this.state: ', this.state)
         return (
-            <div class="soldier">
+            <div class="container">
                 <Card className='cardContainer'>
                     <Card.Body>
                         <Form>
@@ -177,6 +177,7 @@ class Homepage extends React.Component {
                         </Form>
                     </Card.Body>
                 </Card>
+                <div class='soldier'></div>
             </div>
 
 

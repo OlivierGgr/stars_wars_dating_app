@@ -1,5 +1,6 @@
 import React from 'react';
 import Homepage from './Components/Homepage';
+import './Style/style.scss';
 
 const LOCALSTORAGE_KEY = 'someJson';
 class App extends React.Component {
