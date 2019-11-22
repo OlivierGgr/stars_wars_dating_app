@@ -47,6 +47,11 @@ export default class ModalComponent extends React.Component {
     }
     nopeBtnHover = {background:'red', color:'white'}
 
+    sendMatch(){
+      this.props.isMatch(this.props.id)
+      console.log(this.props.id)
+    }
+
     render() {
 
         console.log('before IF STATEMENT   '+this.props.show + 'state : ' + this.state.show)
@@ -81,8 +86,8 @@ export default class ModalComponent extends React.Component {
                   </ModalBody>
                 <ModalFooter>
                 <div className="row baseInfo col-12 modalChoose">
-                    <div className="col-6"><Button variant='outline-danger' block>Nope</Button></div>
-                    <div className="col-6"><Button variant='outline-success' block>Let's talk</Button></div>
+                    <div className="col-6"><Button variant='outline-danger' className='likeOrNotBtn' block >Nope</Button></div>
+                    <div className="col-6"><Button variant='outline-success' className='likeOrNotBtn' block onClick={this.sendMatch.bind(this)}>Let's talk</Button></div>
                 </div>
                 </ModalFooter>
               </Modal>

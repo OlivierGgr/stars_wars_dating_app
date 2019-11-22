@@ -1,6 +1,6 @@
 import React from 'react'
 import UserProfile from './UserProfile'
-import ModaLProfile from './Modal'
+// import ModaLProfile from './Modal'
 import '../App.css'
 
 import axios from 'axios';
@@ -24,7 +24,8 @@ export default class RightComponent extends React.Component {
                 gender:'',
                 height:'',
                 homeworld:'',
-                affiliations:''
+                affiliations:'',
+                id: ''
               }
             ],
       
@@ -37,13 +38,14 @@ export default class RightComponent extends React.Component {
             console.log(res.data[0]);
             let arr = [];
             res.data.map( (item, index, wholeArray) => {
+              let id = item.id
               let image = item.image;
               let name= item.name
               let gender= item.gender
               let height= item.height
               let homeworld= item.homeworld
               let affiliations= item.affiliations
-              arr.push({image, name, gender, height, homeworld, affiliations})
+              arr.push({id,image, name, gender, height, homeworld, affiliations})
             })
             this.setState({
               flagForModal : false,
@@ -67,6 +69,9 @@ export default class RightComponent extends React.Component {
             console.log('qsdfgh')
           }
     
+          sendProfileToMatch(propsfromModal){
+              this.props.newMatch(this.state.arr[propsfromModal-1])
+          }
 
     render(){
         return(
@@ -92,7 +97,7 @@ export default class RightComponent extends React.Component {
                         </div>
                         ))}
 
-                <ModaLProfile 
+                {/* <ModaLProfile 
           show={this.state.checkBoxThatOpensModal} 
           xBtnInfo={this.handleXBtn.bind(this)}
           name={this.state.arr[this.state.index].name}
@@ -101,9 +106,11 @@ export default class RightComponent extends React.Component {
           homeworld={this.state.arr[this.state.index].homeworld}
           affiliations={this.state.arr[this.state.index].affiliations}
           height={this.state.arr[this.state.index].height}
+          id={this.state.arr[this.state.index].id}
           animation={true}
           scrollable={true}
-          size='lg'/>
+          size='lg'
+          isMatch={this.sendProfileToMatch.bind(this)}/> */}
                 </div>
             </div>
             

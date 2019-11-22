@@ -1,13 +1,15 @@
 import React from 'react';
-import ModaLProfile from './Components/Modal'
-import UserProfile from './Components/UserProfile'
 import RightComponent from './Components/RightComponent'
 import MessagesRightSection from './Components/MessagesRightSection'
+import LeftSide from './Components/LeftSide';
+import Matches from './Components/Matches'
 
 import { Switch, Route, Link } from 'react-router-dom'
-import axios from 'axios';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import logo from './logo.svg';
+import './App.css';
+
+
 
 const user= {
   name: 'Vasile Popescu',
@@ -22,7 +24,10 @@ const user= {
 class App extends React.Component{
   constructor(props){
     super(props);
-  //   this.state = {
+    this.state={
+      newMatchId : ''
+    }
+    // this.state = {
   //     picture : '',
   //     name: '',
   //     gender: '',
@@ -80,13 +85,24 @@ class App extends React.Component{
   //     console.log('qsdfgh')
   //   }
   }
+
+  addMatch(idOfMatch){
+    this.setState({
+      newMatchId: idOfMatch
+    })
+
+    console.log(idOfMatch)
+  }
+
+
     render(){
   return (
     <div className="App">
       <header className="App-header">
 
       <Switch>
-        <Route path='/profiles-available' component={RightComponent}/>
+        <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>
+        <Route path='/profiles-available' render={(props) => <RightComponent newMatch={this.addMatch.bind(this)} />}/>
         <Route path='/my-messages' component={MessagesRightSection}/>
       </Switch>
       {/* <RightComponent />
@@ -128,11 +144,12 @@ class App extends React.Component{
           animation={true}
           scrollable={true}
           size='lg'/> */}
+        <LeftSide userImage={user.image} userName={user.name}/>
 
-        <div className="LeftComponent">
+        {/* <div className="LeftComponent">
           <div className="row leftHeader">
             <div className="col-4">
-              {/* <img src={this.state.arr[0].image} style={{height:'70px', width:'70px', borderRadius:'50%'}} alt=""/> */}
+              <img src={this.state.arr[0].image} style={{height:'70px', width:'70px', borderRadius:'50%'}} alt=""/>
             </div>
             <div className="col-8 userHello">
               Hello USERNAME
@@ -145,7 +162,7 @@ class App extends React.Component{
             <li><Link to='/my-messages'>Messages</Link></li>
           </ul>
           </div>
-        </div>
+        </div> */}
       </header>
     </div>
   );
