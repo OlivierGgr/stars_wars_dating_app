@@ -2,6 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import UserProfile from './Components/UserProfile.js'
+import LeftSide from './Components/LeftSide';
 
 
 const user= {
@@ -18,7 +19,8 @@ function App() {
   return (
     <div >
       <header>
-        <UserProfile {...user}/>
+        {/* <UserProfile {...user}/> */}
+        <LeftSide userImage={user.image} userName={user.name}/>
       </header>
     </div>
   );

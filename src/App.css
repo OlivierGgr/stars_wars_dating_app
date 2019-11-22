@@ -30,16 +30,8 @@
         width: 200px!important;
         border: 3px solid #fff;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    }
-    
-    .btn-primary {
-        color: green!important;
-        background-color: whitesmoke!important;
-        border-color: #b5cce4!important;
-        position: absolute!important;
-        bottom: 1%!important;
-        right: 10px!important;
-        border-radius: 30%!important;
+        position: relative;
+        left: 25%;
     }
     
     .m-t-5 {
@@ -110,4 +102,66 @@
     
     .bullet {
         list-style-type: none;
+    }
+    /*Left Side component*/
+    
+    .leftSideBody {
+        width: 50%;
+    }
+    
+    img {
+        vertical-align: middle;
+        border-radius: 55%;
+        height: 70px;
+        width: 70px;
+        border: solid 1px !important;
+    }
+    
+    .btn-block {
+        display: block;
+        width: 100%;
+        margin-top: 8%;
+        width: 70%!important;
+        height: 76px !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        color: white;
+        margin-inline-end: auto;
+    }
+    
+    @media (min-width: 865px) {
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-inline-end: auto;
+        }
+    }
+    
+    .btn,
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1.8rem !important;
+        line-height: 1.5;
+        border-radius: 1.3rem !important;
+    }
+    
+    .btn-secondary {
+        color: white !important;
+        border-color: #6c757d !important;
+        border: solid 1px !important;
+    }
+    
+    .btn-block,
+    .btn-block {
+        margin-top: 2.5rem !important;
+        margin-inline-start: 19%;
+    }
+    
+    .container {
+        display: block;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        width: 85%!important;
     }
