@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/bucharest-hackathon1-19nov-gr1/static/css/main.cb6a0487.chunk.css",
+    "main.js": "/bucharest-hackathon1-19nov-gr1/static/js/main.b4b51d39.chunk.js",
+    "main.js.map": "/bucharest-hackathon1-19nov-gr1/static/js/main.b4b51d39.chunk.js.map",
+    "runtime-main.js": "/bucharest-hackathon1-19nov-gr1/static/js/runtime-main.ab92f2f1.js",
+    "runtime-main.js.map": "/bucharest-hackathon1-19nov-gr1/static/js/runtime-main.ab92f2f1.js.map",
+    "static/css/2.b0bb7f2c.chunk.css": "/bucharest-hackathon1-19nov-gr1/static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.762e830a.chunk.js": "/bucharest-hackathon1-19nov-gr1/static/js/2.762e830a.chunk.js",
+    "static/js/2.762e830a.chunk.js.map": "/bucharest-hackathon1-19nov-gr1/static/js/2.762e830a.chunk.js.map",
+    "index.html": "/bucharest-hackathon1-19nov-gr1/index.html",
+    "precache-manifest.f87363e485b88bca92173b87dc47066e.js": "/bucharest-hackathon1-19nov-gr1/precache-manifest.f87363e485b88bca92173b87dc47066e.js",
+    "service-worker.js": "/bucharest-hackathon1-19nov-gr1/service-worker.js",
+    "static/css/2.b0bb7f2c.chunk.css.map": "/bucharest-hackathon1-19nov-gr1/static/css/2.b0bb7f2c.chunk.css.map",
+    "static/css/main.cb6a0487.chunk.css.map": "/bucharest-hackathon1-19nov-gr1/static/css/main.cb6a0487.chunk.css.map",
+    "static/media/TFA2.jpg": "/bucharest-hackathon1-19nov-gr1/static/media/TFA2.6754cd84.jpg",
+    "static/media/noMatches.png": "/bucharest-hackathon1-19nov-gr1/static/media/noMatches.766ca1ef.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab92f2f1.js",
+    "static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.762e830a.chunk.js",
+    "static/css/main.cb6a0487.chunk.css",
+    "static/js/main.b4b51d39.chunk.js"
+  ]
+}
