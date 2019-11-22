@@ -1,7 +1,10 @@
 import React from 'react';
 import ModaLProfile from './Components/Modal'
 import UserProfile from './Components/UserProfile'
+import RightComponent from './Components/RightComponent'
+import MessagesRightSection from './Components/MessagesRightSection'
 
+import { Switch, Route, Link } from 'react-router-dom'
 import axios from 'axios';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,70 +22,77 @@ const user= {
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      picture : '',
-      name: '',
-      gender: '',
-      height: '',
-      homeworld: '',
-      affiliations: [],
-      index: 0,
-      arr : [
-        {
-          image: "",
-          name:'',
-          gender:'',
-          height:'',
-          homeworld:'',
-          affiliations:''
-        }
-      ],
+  //   this.state = {
+  //     picture : '',
+  //     name: '',
+  //     gender: '',
+  //     height: '',
+  //     homeworld: '',
+  //     affiliations: [],
+  //     index: 0,
+  //     arr : [
+  //       {
+  //         image: "",
+  //         name:'',
+  //         gender:'',
+  //         height:'',
+  //         homeworld:'',
+  //         affiliations:''
+  //       }
+  //     ],
 
-      checkBoxThatOpensModal: false
-    }
-  }
-  componentDidMount() {
-    axios.get('https://melroune.github.io/starwars-api/api/all.json')
-    .then(res => {
-      console.log(res.data[0]);
-      let arr = [];
-      res.data.map( (item, index, wholeArray) => {
-        let image = item.image;
-        let name= item.name
-        let gender= item.gender
-        let height= item.height
-        let homeworld= item.homeworld
-        let affiliations= item.affiliations
-        arr.push({image, name, gender, height, homeworld, affiliations})
-      })
-      this.setState({
-        flagForModal : false,
-        arr : arr
-      });
-    });
-    }
+  //     checkBoxThatOpensModal: false
+  //   }
+  // }
+  // componentDidMount() {
+  //   axios.get('https://melroune.github.io/starwars-api/api/all.json')
+  //   .then(res => {
+  //     console.log(res.data[0]);
+  //     let arr = [];
+  //     res.data.map( (item, index, wholeArray) => {
+  //       let image = item.image;
+  //       let name= item.name
+  //       let gender= item.gender
+  //       let height= item.height
+  //       let homeworld= item.homeworld
+  //       let affiliations= item.affiliations
+  //       arr.push({image, name, gender, height, homeworld, affiliations})
+  //     })
+  //     this.setState({
+  //       flagForModal : false,
+  //       arr : arr
+  //     });
+  //   });
+  //   }
   
-    checkBoxThatOpensModalFunction = (i) => {
-      console.log('checkbox function triggered')
-      this.setState({checkBoxThatOpensModal: true,
-        index: i})
-      console.log('checkBoxThatOpensModal :  '+ this.state.checkBoxThatOpensModal)
-      console.log(this.state.arr[i].affiliations)
-    }
+  //   checkBoxThatOpensModalFunction = (i) => {
+  //     console.log('checkbox function triggered')
+  //     this.setState({checkBoxThatOpensModal: true,
+  //       index: i})
+  //     console.log('checkBoxThatOpensModal :  '+ this.state.checkBoxThatOpensModal)
+  //     console.log(this.state.arr[i].affiliations)
+  //   }
 
-    handleXBtn(XArgument){
-      this.setState({
-        checkBoxThatOpensModal: false
-      })
-      console.log('qsdfgh')
-    }
-
+  //   handleXBtn(XArgument){
+  //     this.setState({
+  //       checkBoxThatOpensModal: false
+  //     })
+  //     console.log('qsdfgh')
+  //   }
+  }
     render(){
   return (
     <div className="App">
       <header className="App-header">
 
-        <div className="RightComponent">
+      <Switch>
+        <Route path='/profiles-available' component={RightComponent}/>
+        <Route path='/my-messages' component={MessagesRightSection}/>
+      </Switch>
+      {/* <RightComponent />
+      <MessagesRightSection /> */}
+
+        {/* <div className="RightComponent">
           <div className="rightTop">
           <h2>We found these people for you</h2>
           </div>
@@ -102,9 +112,11 @@ class App extends React.Component{
           </div>
           ))}
           </div>
-        </div>
+        </div> */}
 
-        <ModaLProfile 
+
+
+        {/* <ModaLProfile 
           show={this.state.checkBoxThatOpensModal} 
           xBtnInfo={this.handleXBtn.bind(this)}
           name={this.state.arr[this.state.index].name}
@@ -115,17 +127,23 @@ class App extends React.Component{
           height={this.state.arr[this.state.index].height}
           animation={true}
           scrollable={true}
-          size='lg'/>
+          size='lg'/> */}
 
         <div className="LeftComponent">
           <div className="row leftHeader">
             <div className="col-4">
-              <img src={this.state.arr[0].image} style={{height:'70px', width:'70px', borderRadius:'50%'}} alt=""/>
+              {/* <img src={this.state.arr[0].image} style={{height:'70px', width:'70px', borderRadius:'50%'}} alt=""/> */}
             </div>
             <div className="col-8 userHello">
               Hello USERNAME
             </div>
 
+          </div>
+          <div className="link">
+          <ul>
+            <li><Link to='/profiles-available'>Profiles Available</Link></li>
+            <li><Link to='/my-messages'>Messages</Link></li>
+          </ul>
           </div>
         </div>
       </header>
