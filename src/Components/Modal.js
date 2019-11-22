@@ -33,11 +33,24 @@ export default class ModalComponent extends React.Component {
     }
     
 
-    affiliationList = () => (
+    affiliationList = () => {
+      let aff = this.props.affiliations
+      if (this.props.affiliations === undefined) {
+        aff = [""];
+      }
+      console.log(this.props.affiliations[0])
+      return(
         <div>
-          {/* <ul>{this.props.affiliations.map(affiliation => <li key={affiliation}> {affiliation} </li>)}</ul> */}
+          <ul>{Array.from(aff).map(affiliation => <li key={affiliation}> {affiliation} </li>)}</ul>
         </div>
       );
+    }
+    nopeBtnHover = {background:'red', color:'white'}
+
+    sendMatch(){
+      this.props.isMatch(this.props.id)
+      console.log(this.props.id)
+    }
 
     render() {
 
@@ -65,7 +78,7 @@ export default class ModalComponent extends React.Component {
                         <div>
                             <div className="row baseInfo">
                             <h3>{this.props.gender}</h3>
-                            <h3>{this.props.height}</h3>
+                            <h3>{this.props.height} <span className="lowercased">cm</span></h3>
                             </div>
                           <h3>From: <h4>{this.props.homeworld}</h4></h3>
                           <h3>Likes: <h5>{this.affiliationList()}</h5> </h3>
@@ -73,8 +86,8 @@ export default class ModalComponent extends React.Component {
                   </ModalBody>
                 <ModalFooter>
                 <div className="row baseInfo col-12 modalChoose">
-                    <div className="col-6"><Button variant='outline-danger' block>Nope</Button></div>
-                    <div className="col-6"><Button variant='outline-success' block>Let's talk</Button></div>
+                    <div className="col-6"><Button variant='outline-danger' className='likeOrNotBtn' block >Nope</Button></div>
+                    <div className="col-6"><Button variant='outline-success' className='likeOrNotBtn' block onClick={this.sendMatch.bind(this)}>Let's talk</Button></div>
                 </div>
                 </ModalFooter>
               </Modal>

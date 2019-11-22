@@ -3,9 +3,17 @@ import ModaLProfile from './Components/Modal'
 import UserProfile from './Components/UserProfile'
 
 import axios from 'axios';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeftComponent from './Components/LeftComponent';
+import RightComponent from './Components/RightComponent'
+import MessagesRightSection from './Components/MessagesRightSection'
+import LeftSide from './Components/LeftSide';
+import Matches from './Components/Matches'
+import Filter from './Components/Filter'
+import { Switch, Route, Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import logo from './logo.svg';
+import './App.css';
 
 
 
@@ -47,6 +55,7 @@ class App extends React.Component{
       genderSelected: 'Everyone',
       selectedHomeWorld: null,
       selectedSpecies: null,
+      newMatchId : ''
     }
   }
   componentDidMount() {
@@ -100,6 +109,13 @@ class App extends React.Component{
       this.setState({ selectedSpecies });
       console.log(`Option selected:`, selectedSpecies);
     };
+    addMatch(idOfMatch){
+      this.setState({
+        newMatchId: idOfMatch
+      })
+  
+      console.log(idOfMatch)
+    }
 
     render(){
       if(this.state.arr === undefined) return <div>loading ...</div>
@@ -160,12 +176,28 @@ class App extends React.Component{
         </div>
         ))
         
-      
-
+ 
+  
+   
   return (
+    <>
+    <Switch>
+        <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>
+        <Route path='/profiles-available' render={(props) => <RightComponent newMatch={this.addMatch.bind(this)} />}/>
+        <Route path='/my-messages' component={MessagesRightSection}/>
+        <Route path='/filter' component={(props) => <Filter
+        genderSelected = {this.state.genderSelected}
+        changeGender ={this.changeGender}
+        selectedSpecies ={this.state.selectedSpecies}
+        changeSpecies={this.changeSpecies}
+        optionsSpecies={optionsSpecies}
+        selectedHomeWorld={this.state.selectedHomeWorld}
+        optionsHome ={optionsHome}
+        changeHomeWorld= {this.changeHomeWorld}/>}/>
+    </Switch>
+      
     <div className="App">
       <header className="App-header">
-
         <div className="RightComponent">
           <div className="rightTop">
           <h2>We found these people for you</h2>
@@ -194,20 +226,14 @@ class App extends React.Component{
           scrollable={true}
           size='lg'/>
 
-        <LeftComponent 
-        genderSelected = {this.state.genderSelected}
-        changeGender ={this.changeGender}
-        selectedSpecies ={this.state.selectedSpecies}
-        changeSpecies={this.changeSpecies}
-        optionsSpecies={optionsSpecies}
-        selectedHomeWorld={this.state.selectedHomeWorld}
-        optionsHome ={optionsHome}
-        changeHomeWorld= {this.changeHomeWorld}
-        />
+        
+        <LeftSide/>
       </header>
     </div>
-  );
-    }
+    </>
+    
+  )
+  }
 }
 
 export default App;

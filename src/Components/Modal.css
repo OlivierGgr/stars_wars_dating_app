@@ -12,6 +12,10 @@ h3,h4,h5,h6 {
     padding-top: 10px;
 }
 
+.lowercased{
+    text-transform: lowercase;
+}
+
 .modalChoose{
     text-align: center;
 }

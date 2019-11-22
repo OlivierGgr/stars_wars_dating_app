@@ -6,7 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class UserProfile extends Component {
+    affiliationList = () => {
+        let aff = this.props.affiliations
+        if (this.props.affiliations === undefined) {
+          aff = [""];
+        }
 
+        aff = aff.slice(0,3)
+        return(
+            <div>
+              <ul>{Array.from(aff).map(affiliation => <li key={affiliation} className="profilesLikes"> {affiliation} </li>)}</ul>
+            </div>
+          );
+    }
     render() {
         return (
             <div className="container profile-page">
@@ -27,7 +39,7 @@ class UserProfile extends Component {
                                             <li><span className='age'>{this.props.height} cm</span></li><br/><br/>
                                             <li>{this.props.gender} </li>
                                             <li>{this.props.homeworld} </li>
-                                            <li>{this.props.affiliations}</li>
+                                            <li>Likes :{this.affiliationList()}</li>
                                         </ul>
 
                                         {/* <div>
