@@ -29,6 +29,7 @@ class Matches extends Component {
           name={this.newMatch.name}
           gender={this.newMatch.gender}
           homeworld={this.newMatch.homeworld}
+          matched={true}
           />
             )
         } return(

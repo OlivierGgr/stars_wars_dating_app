@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Button } from 'react-bootstrap';
+
 import '../App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,7 +24,7 @@ class UserProfile extends Component {
     writeBtn = () => {
         if(this.props.matched){
             return(
-                <button>Write a message</button>
+                <Button variant='success'>Write a message</Button>
             )
         }
     }
