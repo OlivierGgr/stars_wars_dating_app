@@ -4,6 +4,7 @@ import MessagesRightSection from './Components/MessagesRightSection'
 import LeftSide from './Components/LeftSide';
 import Matches from './Components/Matches';
 import Homepage from './Components/Homepage';
+import MessagesComponent from './Components/MessagesComponent.js';
 import './Style/style.scss';
 
 import { Switch, Route, Link } from 'react-router-dom'
@@ -102,7 +103,8 @@ getData = (json) => {
       <Switch>
         <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>
         <Route path='/profiles-available' render={(props) => <RightComponent newMatch={this.addMatch.bind(this)} />}/>
-        <Route path='/my-messages' component={MessagesRightSection}/>
+        <Route path='/my-messages' render={(props) => <MessagesComponent userImage={user.image}/>
+}/>
       </Switch>
   
         <LeftSide userImage={user.image} userName={this.state.json.firstName}/>
