@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 
 import '../App.css';
 
@@ -17,14 +18,14 @@ class UserProfile extends Component {
         aff = aff.slice(0,3)
         return(
             <div>
-              <ul>{Array.from(aff).map(affiliation => <li key={affiliation} className="profilesLikes"> {affiliation} </li>)}</ul>
+              <ul>{Array.from(aff).map(affiliation => <li key={affiliation} className="profilesLikes" style={{listStyle: "none"}}> {affiliation} </li>)}</ul>
             </div>
           );
     }
     writeBtn = () => {
         if(this.props.matched){
             return(
-                <Button variant='success'>Write a message</Button>
+                <Button variant='success'><Link to="/my-messages">Write a message</Link></Button>
             )
         }
     }
@@ -46,10 +47,10 @@ class UserProfile extends Component {
                                         <span className="job_post"> </span> */}
                                         <ul className="bullet">
                                             <li><h3 className="m-t-0 m-b-0"><strong>{this.props.name}</strong></h3></li>
-                                            <li><span className='age'>{this.props.height} cm</span></li><br/><br/>
-                                            <li>{this.props.gender} </li>
-                                            <li>{this.props.homeworld} </li>
-                                            <li>Likes :{this.affiliationList()}</li>
+                                            <li><span className='age'>{this.props.height} cm</span></li>
+                                            <li style={{textAlign: "left", fontSize: "1.3em"}}><span style={{fontWeight: "bold"}}>Gender: </span>{this.props.gender} </li>
+                                            <li style={{textAlign: "left", fontSize: "1.3em"}}><span style={{fontWeight: "bold"}}>Planet: </span>{this.props.homeworld} </li>
+                                            <li style={{textAlign: "left", fontSize: "1.3em"}}><span style={{fontWeight: "bold"}}>Likes: </span>{this.affiliationList()}</li>
                                             {this.writeBtn()}
                                         </ul>
 

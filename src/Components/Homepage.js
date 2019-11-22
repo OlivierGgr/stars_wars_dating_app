@@ -179,7 +179,7 @@ class Homepage extends React.Component {
                             <div className='containerButtons'>
                                 <Button variant="secondary" className='button'>Upload Image</Button>
                                 <Button variant="secondary" className='button'>Link Facebook</Button>
-                                <Button variant="primary" className='button' onClick={this.handleSubmit}>Sign Up</Button>
+                                <Button variant="danger" className='button' onClick={this.handleSubmit}>Sign Up</Button>
                             </div>
                         </Form>
                     </Card.Body>
