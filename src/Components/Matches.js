@@ -18,14 +18,11 @@ class Matches extends Component {
             idsOfMatches : this.state.idsOfMatches.push(newMatchId)
         })
     }
-
     newMatch = this.props.newMatchId
-    render() {
-        return (
-            <div className='MatchesSection'>
-                <div className="emptyMatches">
-                    <h2>No matches... yet ;-)</h2>
-                </div>
+    noMatch(){
+        console.log(this.newMatch)
+        if(this.newMatch){
+            return (
                 <UserProfile
           image={this.newMatch.image}
           height={this.newMatch.height}
@@ -33,9 +30,25 @@ class Matches extends Component {
           gender={this.newMatch.gender}
           homeworld={this.newMatch.homeworld}
           />
+            )
+        } return(
+                <div className="emptyMatches">
+                    <img src={require(`./noMatches.png`)} className="brokenHeart"/>
+                </div>
+        )
+        }
+
+    render() {
+        return (
+            <div>
+                <div className='MatchesSection'>
+                    {this.noMatch()}
+                </div>
+
             </div>
         )
     }
 }
+
 
 export default Matches;

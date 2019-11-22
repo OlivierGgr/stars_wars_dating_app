@@ -50,6 +50,7 @@ export default class ModalComponent extends React.Component {
     sendMatch(){
       this.props.isMatch(this.props.id)
       console.log(this.props.id)
+      this.toggle()
     }
 
     render() {
@@ -86,7 +87,7 @@ export default class ModalComponent extends React.Component {
                   </ModalBody>
                 <ModalFooter>
                 <div className="row baseInfo col-12 modalChoose">
-                    <div className="col-6"><Button variant='outline-danger' className='likeOrNotBtn' block >Nope</Button></div>
+                    <div className="col-6"><Button variant='outline-danger' className='likeOrNotBtn' block onClick={this.toggle}>Nope</Button></div>
                     <div className="col-6"><Button variant='outline-success' className='likeOrNotBtn' block onClick={this.sendMatch.bind(this)}>Let's talk</Button></div>
                 </div>
                 </ModalFooter>

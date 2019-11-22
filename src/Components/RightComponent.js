@@ -1,6 +1,6 @@
 import React from 'react'
 import UserProfile from './UserProfile'
-// import ModaLProfile from './Modal'
+import ModaLProfile from './Modal'
 import '../App.css'
 
 import axios from 'axios';
@@ -97,7 +97,7 @@ export default class RightComponent extends React.Component {
                         </div>
                         ))}
 
-                {/* <ModaLProfile 
+                <ModaLProfile 
           show={this.state.checkBoxThatOpensModal} 
           xBtnInfo={this.handleXBtn.bind(this)}
           name={this.state.arr[this.state.index].name}
@@ -110,7 +110,7 @@ export default class RightComponent extends React.Component {
           animation={true}
           scrollable={true}
           size='lg'
-          isMatch={this.sendProfileToMatch.bind(this)}/> */}
+          isMatch={this.sendProfileToMatch.bind(this)}/>
                 </div>
             </div>
             
