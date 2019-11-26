@@ -86,7 +86,7 @@
   font-size: 35px;
 }
 
-.rightTop{
+/* .rightTop{
   height: 5%;
   position: fixed;
   width: 50%;
@@ -94,7 +94,7 @@
   background:#282c34 ;
   z-index: 999;
   opacity: 0.8;
-}
+} */
 
 .profileCardRight{
   margin-top: -10px;

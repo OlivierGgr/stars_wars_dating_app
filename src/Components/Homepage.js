@@ -4,7 +4,8 @@ import { Switch, Route, Link } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Card } from 'react-bootstrap';
-import '../../src/App.css';
+// import '../../src/App.css';
+import '../Style/style.css';
 
 
 
@@ -91,9 +92,9 @@ class Homepage extends React.Component {
     render() {
         console.log('this.state: ', this.state)
         return (
-            <div class="container">
+            <div class="container ">
                         
-                <Card className='cardContainer'>
+                <Card className='homepageContainer'>
                     <Card.Body>
                         <Form>
                             <Form.Group controlId="formGroupFirstName" >
@@ -159,8 +160,8 @@ class Homepage extends React.Component {
                                 <Form.Label><h4>Homeworld</h4></Form.Label>
                                 <Form.Control type="text" size='lg' name='homeworld' onChange={this.handleChange} />
                             </Form.Group>
-
-                            <div className='sectionChoose'>
+                        <div className="row">
+                            <div className='sectionChoose col-5 offset-1'>
                                 <h4>Jedi</h4>
                                 <div>
                                     <input type="radio" name="jedi" value="yes" className='radio' onChange={this.handleChange} />  <label htmlFor='yesLabel' className='sectionChooseText'>Yes</label>
@@ -168,14 +169,14 @@ class Homepage extends React.Component {
                                 </div>
                             </div>
 
-                            <div className='sectionChoose'>
+                            <div className='sectionChoose col-5'>
                                 <h4>Affiliation</h4>
                                 <div>
                                     <input type="radio" name="affiliation" value="resistance" className='radio' onChange={this.handleChange} />  <label htmlFor='' className='sectionChooseText'>Resistance</label>
                                     <input type="radio" name="affiliation" value="empire" className='radio' onChange={this.handleChange} />  <label htmlFor='' className='sectionChooseText'>Empire</label>
                                 </div>
                             </div>
-
+                        </div>
                             <div className='containerButtons'>
                                 <Button variant="secondary" className='button'>Upload Image</Button>
                                 <Button variant="secondary" className='button'>Link Facebook</Button>
