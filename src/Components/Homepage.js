@@ -1,10 +1,6 @@
 import React from 'react';
-import App from '../App.js';
-import { Switch, Route, Link } from 'react-router-dom'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Card } from 'react-bootstrap';
-// import '../../src/App.css';
 import '../Style/style.css';
 
 
@@ -26,35 +22,6 @@ class Homepage extends React.Component {
         }
     }
 
-    // validateJson(json) {
-    //     let validJson
-
-    //     try {
-    //         validJson = JSON.stringify(this.state.json, null, 2)
-    //     } catch (e) {
-    //         throw e
-    //     }
-
-    //     return validJson
-    // }
-
-    // loadJson = () => {
-    //     const json = window.localStorage.getItem(LOCALSTORAGE_KEY)
-    //     this.setState({ json })
-    //     console.log(json);
-    // }
-
-    // saveJson = () => {
-    //     const validJson = this.validateJson(this.state.json)
-
-    //     if (!validJson) return;
-
-    //     window.localStorage.setItem(
-    //         LOCALSTORAGE_KEY,
-    //         validJson
-    //     )
-    // }
-
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -62,13 +29,11 @@ class Homepage extends React.Component {
     }
 
     handleSubmit = (e) => {
-        console.log('this.state: ', this.state)
         this.setState({
             json: {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 age: this.state.age,
-                //    alive: this.state.alive,
                 gender: this.state.gender,
                 lookingFor: this.state.lookingFor,
                 homeworld: this.state.homeworld,
@@ -80,7 +45,6 @@ class Homepage extends React.Component {
             () => this.sendData(),
             1000
         )
-        // this.props.signUp(true)
     }
 
     sendData = () => {
@@ -90,9 +54,8 @@ class Homepage extends React.Component {
     }
 
     render() {
-        console.log('this.state: ', this.state)
         return (
-            <div class="container ">
+            <div className="container ">
                         
                 <Card className='homepageContainer'>
                     <Card.Body>
@@ -122,14 +85,6 @@ class Homepage extends React.Component {
                                 <Form.Control type="number" size='lg' name='age' onChange={this.handleChange} />
                             </Form.Group>
 
-                            {/* <div className='sectionChoose'>
-                            <h4>Alive</h4>
-                            <div>
-                                <input type="radio" className='radio' name='alive' value='yes' onChange={this.handleChange} />  <label htmlFor='yesLabel' className='sectionChooseText'>Yes</label>
-                                <input type="radio" className='radio' name='alive' value='no' onChange={this.handleChange} />  <label htmlFor='noLabel' className='sectionChooseText'>No</label>
-                            </div>
-                        </div> */}
-
                             <div className='sectionChoose'>
                                 <h4>Gender</h4>
                                 <div>
@@ -148,15 +103,7 @@ class Homepage extends React.Component {
                                 </div>
                             </div>
 
-                            {/* <Form.Group controlId="formGroupHomeworld">
-                            <Form.Label><h4>Homeworld</h4></Form.Label>
-                            <Form.Control as="select" size='lg'>
-                                <option>Choose...</option>
-                                <option>...</option>
-                            </Form.Control>
-                        </Form.Group> */}
-
-                            <Form.Group controlId="formGroupAge">
+                            <Form.Group controlId="formGroupHomeworld">
                                 <Form.Label><h4>Homeworld</h4></Form.Label>
                                 <Form.Control type="text" size='lg' name='homeworld' onChange={this.handleChange} />
                             </Form.Group>
@@ -185,7 +132,7 @@ class Homepage extends React.Component {
                         </Form>
                     </Card.Body>
                 </Card>
-                <div class='soldier'></div>
+                <div className='soldier'></div>
             </div>
 
 

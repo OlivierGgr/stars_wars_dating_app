@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  position: relative;
   height: 100vh;
   overflow:scroll;
   flex-wrap: wrap;
@@ -29,6 +28,15 @@
   z-index: 9999;
 }
 
+/* LEFT AND RIGHT COMPONENTS */
+
+
+.LeftComponent{
+  position: absolute;
+  height: 100vh;
+  width: 50%;
+  left:0;
+}
 .RightComponent{
   position: absolute;
   height: 100vh;
@@ -48,12 +56,53 @@
   background: #d7d7d7;
   flex-wrap: wrap;
   overflow:scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.emptyMatches{
-  margin: 0 auto;
-  margin-top: 50%;
+.leftBody {
+  width: 50%;
+  color: black;
+  background:#f8f9fa;
+  position: absolute;
+  height: 90vh;
+  margin-top: 5vh;
+  z-index: 10;
+  left:0;
+  flex-wrap: wrap;
+  overflow:scroll;
 }
+
+.MessagesRightSection{
+  position: absolute;
+  height: 100vh;
+  width: 50%;
+  right:0;
+  background: #0971d3;
+  flex-wrap: wrap;
+  overflow:scroll;
+}
+
+.leftSideBody {
+  position: absolute;
+  height: 100vh;
+  width: 50%;
+  left:0;
+}
+
+.snippets{
+  position: absolute;
+  height: 100vh;
+  width: 50%;
+  right:0;
+  background: #d7d7d7;
+  flex-wrap: wrap;
+  overflow:scroll;
+}
+
+/* LEFT AND RIGHT COMPONENTS  END  */
+
 
 .brokenHeart{
   height: 200px;
@@ -65,12 +114,6 @@
   font-size:40px;
 }
 
-.LeftComponent{
-  position: absolute;
-  height: 100vh;
-  width: 50%;
-  left:0;
-}
 
 .leftHeader{
   margin-top: 28px;
@@ -85,16 +128,6 @@
   text-align: left;
   font-size: 35px;
 }
-
-/* .rightTop{
-  height: 5%;
-  position: fixed;
-  width: 50%;
-  text-align: center;
-  background:#282c34 ;
-  z-index: 999;
-  opacity: 0.8;
-} */
 
 .profileCardRight{
   margin-top: -10px;
@@ -208,15 +241,23 @@
   list-style-type: none;
 }
 
-.MessagesRightSection{
-  position: absolute;
-  height: 100vh;
-  width: 50%;
-  right:0;
-  background: #0971d3;
-  flex-wrap: wrap;
-  overflow:scroll;
+.filterBody{
+  padding:15px;
+  font-size: 1.8rem;
 }
+
+.filterLabels{
+  font-size: 2.1rem!important;
+}
+
+.filterRadio{
+  font-size:1.5rem!important;
+}
+
+.MuiTypography-body1{
+  font-size:1.7rem!important;
+}
+
     /* UserProfile */
     
     body {
@@ -323,13 +364,7 @@
         list-style-type: none;
     }
     /*Left Side component*/
-    
-    .leftSideBody {
-        position: absolute;
-        height: 100vh;
-        width: 50%;
-        left:0;
-    }
+
     
     img {
         vertical-align: middle;
@@ -366,6 +401,7 @@
         font-size: 1.8rem !important;
         line-height: 1.5;
         border-radius: 1.3rem !important;
+        margin: 0 auto!important;
     }
 
     .likeOrNotBtn{
@@ -567,15 +603,6 @@
         font-size: 25px;
     }
 
-    .snippets{
-      position: absolute;
-      height: 100vh;
-      width: 50%;
-      right:0;
-      background: #d7d7d7;
-      flex-wrap: wrap;
-      overflow:scroll;
-    }
     .brokenHeart{
       height: 300px;
       width: 300px;
@@ -604,4 +631,24 @@
         padding: 5px;
         text-align: center;
         font-size: 20px;
+    }
+
+    .filterHeader{
+      background: #6c757d;
+      text-align: center;
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .filterHeader Button{
+      font-size: 1.3rem;
+      border: 3px solid white;
+      height: 64px;
+      font-weight: bold;
+    }
+
+    .filterHeader Button a{
+      text-decoration: none;
+      color:white;
     }

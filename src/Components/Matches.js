@@ -35,7 +35,7 @@ class Matches extends Component {
         } return(
                 <div className="emptyMatches">
                     <h2 style={{color:'#343a40'}}>No matches yet..</h2>
-                    <img src={require(`./noMatches.png`)} className="brokenHeart"/>
+                    <img src={require(`./noMatches.png`)} alt="myMatch" className="brokenHeart"/>
                 </div>
         )
         }

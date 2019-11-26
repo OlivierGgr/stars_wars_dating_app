@@ -38,7 +38,6 @@ export default class ModalComponent extends React.Component {
       if (this.props.affiliations === undefined) {
         aff = [""];
       }
-      console.log(this.props.affiliations[0])
       return(
         <div>
           <ul>{Array.from(aff).map(affiliation => <li key={affiliation}> {affiliation} </li>)}</ul>
@@ -49,13 +48,12 @@ export default class ModalComponent extends React.Component {
 
     sendMatch(){
       this.props.isMatch(this.props.id)
-      console.log(this.props.id)
+      console.log('match sent to atches section : ' +this.props.id)
       this.toggle()
     }
 
     render() {
 
-        console.log('before IF STATEMENT   '+this.props.show + 'state : ' + this.state.show)
         if(this.props.show !== this.state.show && !this.state.valueUpdated) {
             this.setState({
               show: this.props.show,

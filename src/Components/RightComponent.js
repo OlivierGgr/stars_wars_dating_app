@@ -10,6 +10,7 @@ export default class RightComponent extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            filterResults: this.props.filterResults,
             picture : '',
             name: '',
             gender: '',
@@ -35,7 +36,6 @@ export default class RightComponent extends React.Component {
         componentDidMount() {
           axios.get('https://melroune.github.io/starwars-api/api/all.json')
           .then(res => {
-            console.log(res.data[0]);
             let arr = [];
             res.data.map( (item, index, wholeArray) => {
               let id = item.id
@@ -66,11 +66,12 @@ export default class RightComponent extends React.Component {
             this.setState({
               checkBoxThatOpensModal: false
             })
-            console.log('qsdfgh')
           }
     
           sendProfileToMatch(propsfromModal){
               this.props.newMatch(this.state.arr[propsfromModal-1])
+              console.log(propsfromModal)
+              console.log(this.state.arr[propsfromModal-1])
           }
 
     render(){
@@ -82,9 +83,9 @@ export default class RightComponent extends React.Component {
                 </div>
   
                 <div className="container results" >
-            {this.state.arr.map((item, i)=> (
+            {this.props.filterResults.map((item, i)=> (
                         
-                        <div className="profileCardRight">
+                        <div className="profileCardRight" key={i}>
                             <UserProfile
                             onClick={() => this.checkBoxThatOpensModalFunction(i)}
                             image={item.image}
@@ -100,13 +101,13 @@ export default class RightComponent extends React.Component {
                 <ModaLProfile 
           show={this.state.checkBoxThatOpensModal} 
           xBtnInfo={this.handleXBtn.bind(this)}
-          name={this.state.arr[this.state.index].name}
-          picture={this.state.arr[this.state.index].image}
-          gender={this.state.arr[this.state.index].gender}
-          homeworld={this.state.arr[this.state.index].homeworld}
-          affiliations={this.state.arr[this.state.index].affiliations}
-          height={this.state.arr[this.state.index].height}
-          id={this.state.arr[this.state.index].id}
+          name={this.props.filterResults[this.state.index].name}
+          picture={this.props.filterResults[this.state.index].image}
+          gender={this.props.filterResults[this.state.index].gender}
+          homeworld={this.props.filterResults[this.state.index].homeworld}
+          affiliations={this.props.filterResults[this.state.index].affiliations}
+          height={this.props.filterResults[this.state.index].height}
+          id={this.props.filterResults[this.state.index].id}
           animation={true}
           scrollable={true}
           size='lg'
