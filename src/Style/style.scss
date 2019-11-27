@@ -1,4 +1,4 @@
-@import 'backgroundAnimation';
+//@import "backgroundAnimation.scss";
 
 .cardContainer {
     margin: 0 auto;
@@ -7,37 +7,34 @@
     border-radius: 15px;
     box-shadow: 0 0 5px;
     top: 20px;
-  }
-  
-  .radio {
+}
+
+.radio {
     margin-left: 15px;
     width: 17px;
-    height:  17px;
-  }
-  
-  .sectionChoose {
+    height: 17px;
+}
+
+.sectionChoose {
     margin-bottom: 16px;
     display: flex;
-  }
-  
-  .sectionChooseText {
+}
+
+.sectionChooseText {
     font-size: 1.5rem;
-  }
-  
-  .sectionChooseSpace {
+}
+
+.sectionChooseSpace {
     margin-left: 15px;
     width: 17px;
-    height:  17px;
-  }
-  
-  .button {
+    height: 17px;
+}
+
+.button {
     font-size: 25px;
     margin: 10px 10px 10px 0;
-  }
-  
-  .containerButtons {
-    text-align: center;
-  }
-  
+}
 
-  
+.containerButtons {
+    text-align: center;
+}

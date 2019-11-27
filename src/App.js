@@ -1,3 +1,5 @@
+import SignUpPage from './Components/SignUpPage';
+
 import React from 'react';
 import RightComponent from './Components/RightComponent'
 import MessagesRightSection from './Components/MessagesRightSection'
@@ -90,7 +92,11 @@ getData = (json) => {
       console.log(window.localStorage.getItem(LOCALSTORAGE_KEY))
       if(this.state.isVisible) {
         return(
-          <Homepage saveJson={this.getData} signUp={this.enterTheApp.bind(this)}/>
+          <div>
+          {/* <Homepage saveJson={this.getData} signUp={this.enterTheApp.bind(this)}/> */}
+          <SignUpPage saveJson={this.getData} signUp={this.enterTheApp.bind(this)}/>
+          </div>
+
         )
       } else {
         if(this.state.json == {}){
@@ -99,10 +105,10 @@ getData = (json) => {
         return (
         <div className="App">
       <header className="App-header">
-
+            <RightComponent />
       <Switch>
-        <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>
         <Route path='/profiles-available' render={(props) => <RightComponent newMatch={this.addMatch.bind(this)} />}/>
+        <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>
         <Route path='/my-messages' render={(props) => <MessagesComponent userImage={user.image}/>
 }/>
       </Switch>

@@ -64,15 +64,15 @@ class MessagesComponent extends Component {
                   </div>
                 </div>
                 <div class="panel-footer">
-                  <form>
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Say something"/>
-                      <span class="input-group-btn">
+                  <form className='formContainer'>
+                    
+                      <input type="text" class="form-control inputForm" placeholder="Say something"/>
+               
                         {/* <button class="btn pull-center btn-primary btnSend" type="button">Send</button> */}
                         <button className='btnSend'>Send</button>
 
-                      </span>
-                    </div>
+                    
+                    
                   </form>
                 </div>
               </div>

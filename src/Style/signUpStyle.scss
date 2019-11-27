@@ -1,0 +1,71 @@
+@import 'signUpParticles.scss';
+
+.alignField {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label {
+    margin-right: 15px;
+}
+
+.MuiButton-root.signUpButton {
+    height: 60px;
+    margin: 10px 0 20px 0;
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+}
+
+.MuiButton-label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.MuiButton-fullWidth.signUpButton {
+    margin-bottom: 30px;
+}
+
+.formStyle {
+    padding: 20px 0 10px;
+    box-sizing: border-box;
+}
+
+.containerBody {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.containerBody .formContainer {
+    position: relative;
+    z-index: 1;
+
+}
+ .particlesContainer {
+    position: absolute;
+    background: #2c3e50;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.uploadPhotoInput {
+    display:none;
+}
+
+.MuiButton-root.uploadPhotoButton {
+    height: 60px;
+    margin: 20px 0 10px 0;
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+    border:none;
+    width: 536px;
+}
+
+.MuiFormGroup-root.alignRadioButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
