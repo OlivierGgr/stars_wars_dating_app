@@ -5,6 +5,9 @@ import { Switch, Route, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+import { connect } from  'react-redux';
+
+
 
 class LeftSide extends Component {
 
@@ -17,7 +20,7 @@ class LeftSide extends Component {
                         <a className="navbar-brand" href="#">
                             <img src={this.props.userImage} alt="" />
                         </a>
-                        <h1>Hello {this.props.userName}</h1>
+                        <h2>Hello {this.props.userName}</h2>
                     </div>
 
                 </nav>
@@ -79,4 +82,10 @@ class LeftSide extends Component {
     }
 }
 
-export default LeftSide;
+const mapStateToProps = (state) => {
+    return {
+        userName: state.auth.firstName
+    }
+}
+
+export default connect(mapStateToProps) (LeftSide);

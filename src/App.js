@@ -1,11 +1,11 @@
-import SignUpPage from './Components/SignUpPage';
+import SignUpPage from './Containers/SignUpPage';
 
 import React from 'react';
 import RightComponent from './Components/RightComponent'
-import MessagesRightSection from './Components/MessagesRightSection'
-import LeftSide from './Components/LeftSide';
+// import MessagesRightSection from './Components/MessagesRightSection'
+import LeftSide from './Containers/LeftSide';
 import Matches from './Components/Matches';
-import Homepage from './Components/Homepage';
+// import Homepage from './Components/Homepage';
 import MessagesComponent from './Components/MessagesComponent.js';
 import './Style/style.scss';
 
@@ -18,11 +18,6 @@ const LOCALSTORAGE_KEY = 'someJson';
 
 
 const user= {
-  name: 'Vasile Popescu',
-  age: '99',
-  homeworld: 'Polis massa',
-  gender: 'Male',
-  affiliations: "Alliance to Restore the Republic",
   image: "https://bootdey.com/img/Content/avatar/avatar7.png"
 }
 
@@ -113,7 +108,9 @@ getData = (json) => {
 }/>
       </Switch>
   
-        <LeftSide userImage={user.image} userName={this.state.json.firstName}/>
+        <LeftSide userImage={user.image} 
+          // userName={this.state.json.firstName}
+          />
 
       </header>
     </div>

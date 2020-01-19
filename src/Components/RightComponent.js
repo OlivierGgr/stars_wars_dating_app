@@ -152,7 +152,6 @@ export default class RightComponent extends React.Component {
                         }} />
                 </div>
             {this.state.arr.map((item, i)=> (
-                        
                         <div className="profileCardRight">
                             <UserProfile
                             onClick={() => this.checkBoxThatOpensModalFunction(i)}

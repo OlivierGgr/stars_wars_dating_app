@@ -14,6 +14,9 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Card from '@material-ui/core/Card';
 
+import { connect } from  'react-redux';
+
+
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -40,7 +43,20 @@ class SignUp extends React.Component {
     handleSubmit = (e) => {
         console.log('this.state: ', this.state)
         this.setState({
-            json: {
+            // json: {
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                age: this.state.age,
+                gender: this.state.gender,
+                lookingFor: this.state.lookingFor,
+                homeworld: this.state.homeworld,
+                jedi: this.state.jedi,
+                affiliation: this.state.affiliation,
+            // }
+        })
+        this.props.dispatch(
+            {
+                type : "CREATE_SESSION",
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
                 age: this.state.age,
@@ -50,7 +66,7 @@ class SignUp extends React.Component {
                 jedi: this.state.jedi,
                 affiliation: this.state.affiliation,
             }
-        })
+        )
         setTimeout(
             () => this.sendData(),
             1000
@@ -353,4 +369,4 @@ class SignUp extends React.Component {
     }
 }
 
-export default SignUp;
+export default connect() (SignUp);
