@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserProfile from './UserProfile';
+import Particles from 'react-particles-js';
 
 import '../App.css'
 
@@ -33,7 +34,10 @@ class Matches extends Component {
             )
         } return(
                 <div className="emptyMatches">
-                    <img src={require(`./noMatches.png`)} className="brokenHeart"/>
+                        <img src={require(`./noMatches.png`)} className="brokenHeart"/>
+                            <div>
+                            No matches to display... yet
+                            </div>
                 </div>
         )
         }

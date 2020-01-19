@@ -69,7 +69,11 @@ class SignUp extends React.Component {
                 <div className='particlesContainer'>
                     <Particles
                         style={{
-                            minHeight: '100vh'
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%"
                         }}
                         params={{
                             "particles": {
@@ -253,7 +257,7 @@ class SignUp extends React.Component {
                                             </div>
                                         </FormControl>
                                     </div>
-
+{/* 
                                     <TextField
                                         onChange={this.handleChange}
                                         color='secondary'
@@ -265,7 +269,7 @@ class SignUp extends React.Component {
                                         name="homeworld"
                                         type='text'
                                         autoComplete="homeworld"
-                                    />
+                                    /> */}
 
                                     <div>
                                         <FormControl component='fieldset'  >
@@ -310,7 +314,7 @@ class SignUp extends React.Component {
                                             </div>
                                         </FormControl>
                                     </div>
-
+{/* 
                                     <div>
                                         <input
                                             accept="image/*"
@@ -324,7 +328,7 @@ class SignUp extends React.Component {
                                                 Upload profile photo
                                             </Button>
                                         </label>
-                                    </div>
+                                    </div> */}
 
                                     <div>
                                         <Button

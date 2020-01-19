@@ -7,8 +7,9 @@
   flex-wrap: wrap;
 
 }
-.App-logo {
-  height: 40vmin;
+
+li {
+  list-style-type: none;
 }
 
 .App-header {
@@ -22,10 +23,6 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
-}
-
 .openedModal{
   z-index: 9999;
 }
@@ -33,9 +30,9 @@
 .RightComponent{
   position: absolute;
   height: 100vh;
-  width: 50%;
+  width: 66%;
   right:0;
-  background: #09d3ac;
+  /* background: #09d3ac; */
   flex-wrap: wrap;
   overflow:scroll;
 }
@@ -44,7 +41,7 @@
 
 .emptyMatches{
   margin: 0 auto;
-  margin-top: 50%;
+  margin-top: 33%;
 }
 
 .brokenHeart{
@@ -61,10 +58,10 @@
 .MatchesSection{
   position: absolute;
   height: 100vh;
-  width: 50%;
+  width: 66%;
   right:0;
   top:0;
-  background: #09D3AC;
+  background: #424242;
   flex-wrap: wrap;
   overflow:scroll;
 }
@@ -91,11 +88,10 @@
 }
 
 .rightTop{
-  height: 5%;
+  height: 10%;
   position: fixed;
-  width: 50%;
+  width: 66%;
   text-align: center;
-  background:#282c34 ;
   z-index: 999;
   opacity: 0.8;
 }
@@ -105,8 +101,8 @@
   /* height:320px */
 }
 
-.age {
-  font-size: 25px;
+.height {
+  font-size: 1.2rem;
 }
 
 .card .body {
@@ -130,6 +126,8 @@
   width: 200px!important;
   border: 3px solid #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: absolute;
+  height: 250px;
 }
 
 .btn-primary {
@@ -166,7 +164,12 @@
 }
 
 .profile-page .profile-header {
-  position: relative
+  position: relative;
+  height: 36vh;
+}
+
+.profile-body {
+  display: flex;
 }
 
 .profile-page .profile-header .profile-image img {
@@ -212,6 +215,20 @@
   list-style-type: none;
 }
 
+.listAlignLeft {
+  text-align: left;
+}
+
+.listAlignTop {
+  display: flex;
+  justify-content: space-around;
+}
+
+.listAlignBottom li {
+  width: 112%;
+  margin-left: -2%;
+}
+
 .MessagesRightSection{
   position: absolute;
   height: 100vh;
@@ -253,8 +270,6 @@
         width: 200px!important;
         border: 3px solid #fff;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        position: relative;
-        left: 25%;
     }
     
     .m-t-5 {
@@ -331,8 +346,16 @@
     .leftSideBody {
         position: absolute;
         height: 100vh;
-        width: 50%;
+        width: 34%;
         left:0;
+    }
+
+    .leftSideBody nav {
+      height:15%;
+    }
+
+    .bg-dark {
+      background-color: none!important;
     }
     
     img {
@@ -370,6 +393,8 @@
         font-size: 1.8rem !important;
         line-height: 1.5;
         border-radius: 1.3rem !important;
+        margin: 0 auto!important;
+        margin-top: 15%!important
     }
 
     .likeOrNotBtn{
@@ -410,9 +435,11 @@
       align-self: center;
     }
 
-    .mainContainerLeft{
-      height: 100%;
+    .mainContainerLeft {
       justify-items: center;
+      margin-left: 0%!important;
+      margin-right: 0%!important;
+      width: 100%!important;
     }
 
     .buttons a{
@@ -576,9 +603,9 @@
     .snippets{
       position: absolute;
       height: 100vh;
-      width: 50%;
+      width: 66%;
       right:0;
-      background: #09d3ac;
+      /* background: #09d3ac; */
       flex-wrap: wrap;
       overflow:scroll;
     }
@@ -590,6 +617,6 @@
     }
 
     button :hover  {
-      text-decoration: none !imporant;
+      text-decoration: none !important;
     }
 

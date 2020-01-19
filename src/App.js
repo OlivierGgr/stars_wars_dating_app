@@ -105,7 +105,8 @@ getData = (json) => {
         return (
         <div className="App">
       <header className="App-header">
-            <RightComponent />
+        
+      <RightComponent />
       <Switch>
         <Route path='/profiles-available' render={(props) => <RightComponent newMatch={this.addMatch.bind(this)} />}/>
         <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>

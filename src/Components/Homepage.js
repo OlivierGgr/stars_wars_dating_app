@@ -25,35 +25,6 @@ class Homepage extends React.Component {
         }
     }
 
-    // validateJson(json) {
-    //     let validJson
-
-    //     try {
-    //         validJson = JSON.stringify(this.state.json, null, 2)
-    //     } catch (e) {
-    //         throw e
-    //     }
-
-    //     return validJson
-    // }
-
-    // loadJson = () => {
-    //     const json = window.localStorage.getItem(LOCALSTORAGE_KEY)
-    //     this.setState({ json })
-    //     console.log(json);
-    // }
-
-    // saveJson = () => {
-    //     const validJson = this.validateJson(this.state.json)
-
-    //     if (!validJson) return;
-
-    //     window.localStorage.setItem(
-    //         LOCALSTORAGE_KEY,
-    //         validJson
-    //     )
-    // }
-
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import { Switch, Route, Link } from 'react-router-dom'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Switch, Route, Link } from 'react-router-dom'
 
 
 class LeftSide extends Component {
@@ -10,7 +12,7 @@ class LeftSide extends Component {
         return (
 
             <div className='leftSideBody'>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+                <nav className="navbar navbar-expand-lg navbar-dark static-top">
                     <div className="container">
                         <a className="navbar-brand" href="#">
                             <img src={this.props.userImage} alt="" />
@@ -22,10 +24,50 @@ class LeftSide extends Component {
 
                 <div className="container mainContainerLeft">
                     <div className="buttons">
-                    <button type="button" className="btn btn-secondary btn-lg btn-block leftSideBtns"><Link to='/my-matches'>Matches</Link></button>
-                    <button type="button" className="btn btn-secondary btn-lg btn-block leftSideBtns"><Link to='/profiles-available'>Profiles Available</Link></button>
-                    <button type="button" className="btn btn-secondary btn-lg btn-block leftSideBtns"><Link to='/my-messages'>Messages</Link></button>
-                    <button type="button" className="btn btn-secondary btn-lg btn-block leftSideBtns">Filters</button>
+                        <Button
+                            variant='text'
+                            size='large'
+                            className='signUpButton leftSideBtns'
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            onClick={this.handleSubmit}
+                            >
+                            <Link to='/my-matches'>Matches</Link>
+                        </Button>
+                        <Button
+                            variant='text'
+                            size='large'
+                            className='signUpButton leftSideBtns'
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            onClick={this.handleSubmit}
+                            >
+                            <Link to='/profiles-available'>Profiles Available</Link>
+                        </Button>
+                        <Button
+                            variant='text'
+                            size='large'
+                            className='signUpButton leftSideBtns'
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            onClick={this.handleSubmit}
+                            >
+                            <Link to='/my-messages'>Messages</Link>
+                        </Button>
+                        <Button
+                            variant='text'
+                            size='large'
+                            className='signUpButton leftSideBtns'
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            onClick={this.handleSubmit}
+                            >
+                            Filters
+                        </Button>
                     </div>
                 </div>
 
