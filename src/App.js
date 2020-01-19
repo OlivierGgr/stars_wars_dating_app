@@ -9,7 +9,7 @@ import Homepage from './Components/Homepage';
 import MessagesComponent from './Components/MessagesComponent.js';
 import './Style/style.scss';
 
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import logo from './logo.svg';
 import './App.css';
@@ -24,7 +24,6 @@ const user= {
   gender: 'Male',
   affiliations: "Alliance to Restore the Republic",
   image: "https://bootdey.com/img/Content/avatar/avatar7.png"
-
 }
 
 class App extends React.Component{
@@ -70,7 +69,6 @@ getData = (json) => {
     json: json
   })
   setTimeout( () => this.saveJson(), 1000)
-  // setTimeout( () => this.loadJson(), 1500);
 }
 
 
@@ -101,13 +99,14 @@ getData = (json) => {
       } else {
         if(this.state.json == {}){
           this.loadJson();
-        } 
+        }
         return (
         <div className="App">
       <header className="App-header">
         
-      <RightComponent />
       <Switch>
+        <Redirect exact from='/' to='/profiles-available' />
+        <Route path='/sign-up' Component={<SignUpPage/>} />
         <Route path='/profiles-available' render={(props) => <RightComponent newMatch={this.addMatch.bind(this)} />}/>
         <Route path='/my-matches' render={(props) => <Matches newMatchId={this.state.newMatchId}/>}/>
         <Route path='/my-messages' render={(props) => <MessagesComponent userImage={user.image}/>

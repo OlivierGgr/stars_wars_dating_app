@@ -44,6 +44,10 @@ li {
   margin-top: 33%;
 }
 
+.matches {
+  position: relative;
+}
+
 .brokenHeart{
   height: 300px;
   width: 300px;
@@ -548,6 +552,10 @@ li {
     
     .chat-left .chat-time {
         color: #a3afb7
+    }
+    
+    .panel {
+      position: relative;
     }
     
     .panel-footer {

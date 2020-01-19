@@ -46,7 +46,76 @@ class Matches extends Component {
         return (
             <div>
                 <div className='MatchesSection'>
-                    {this.noMatch()}
+                        <div className='particlesContainer'>
+                    <Particles
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%"
+                        }}
+                        params={{
+                            "particles": {
+                                'shape': {
+                                    'type': 'image',
+                                    'image': {
+                                        'src': require('../Image/heart.png'),
+                                        'height': 10,
+                                        'width': 10
+                                    }
+                                },
+                                "number": {
+                                    "value": 60,
+                                    "density": {
+                                        "enable": true,
+                                        "value_area": 1500
+                                    }
+                                },
+                                "line_linked": {
+                                    "enable": true,
+                                    "opacity": 0.02
+                                },
+                                "move": {
+                                    "speed": 1,
+                                    "out_mode": "out"
+                                },
+                                "size": {
+                                    "value": 5,
+                                    "anim": {
+                                        "enable": true,
+                                        "speed": 4,
+                                        "size_min": 10,
+                                        "sync": false
+                                    }
+                                },
+                                "opacity": {
+                                    "anim": {
+                                        "enable": true,
+                                        "speed": 1,
+                                        "opacity_min": 0.05
+                                    }
+                                }
+                            },
+                            "interactivity": {
+                                "events": {
+                                    "onclick": {
+                                        "enable": true,
+                                        "mode": "push"
+                                    }
+                                },
+                                "modes": {
+                                    "push": {
+                                        "particles_nb": 1
+                                    }
+                                }
+                            },
+                            "retina_detect": false
+                        }} />
+                </div>
+                    <div className="matches">
+                        {this.noMatch()}
+                    </div>
                 </div>
 
             </div>
