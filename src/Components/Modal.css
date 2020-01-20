@@ -1,0 +1,21 @@
+/* .row>h3 {
+    margin-left: 150px;
+} */
+
+.baseInfo {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h3,h4,h5,h6 {
+    text-transform: capitalize;
+    padding-top: 10px;
+}
+
+.lowercased{
+    text-transform: lowercase;
+}
+
+.modalChoose{
+    text-align: center;
+}
