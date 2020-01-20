@@ -12,8 +12,8 @@ import { connect } from  'react-redux';
 class LeftSide extends Component {
 
     render() {
+        console.log(this.state.auth);
         return (
-
             <div className='leftSideBody'>
                 <nav className="navbar navbar-expand-lg navbar-dark static-top">
                     <div className="container">
@@ -84,7 +84,14 @@ class LeftSide extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        userName: state.auth.firstName
+        userName: state.auth.firstName,
+        lastName: state.auth.lastName,
+        age: state.auth.age,
+        gender: state.auth.gender,
+        lookingFor: state.auth.lookingFor,
+        homeworld: state.auth.homeworld,
+        jedi: state.auth.jedi,
+        affiliation: state.auth.affiliation,
     }
 }
 

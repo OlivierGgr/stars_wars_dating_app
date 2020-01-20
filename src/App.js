@@ -1,7 +1,7 @@
 import SignUpPage from './Containers/SignUpPage';
 
 import React from 'react';
-import RightComponent from './Components/RightComponent'
+import RightComponent from './Containers/RightComponent'
 // import MessagesRightSection from './Components/MessagesRightSection'
 import LeftSide from './Containers/LeftSide';
 import Matches from './Components/Matches';

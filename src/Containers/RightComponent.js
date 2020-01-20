@@ -1,14 +1,15 @@
 import React from 'react'
 import Particles from 'react-particles-js';
+import { connect } from  'react-redux';
 
-import UserProfile from './UserProfile'
-import ModaLProfile from './Modal'
+import UserProfile from '../Components/UserProfile'
+import ModaLProfile from '../Components/Modal'
 import '../App.css'
 
 import axios from 'axios';
 
 
-export default class RightComponent extends React.Component {
+class RightComponent extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -78,6 +79,7 @@ export default class RightComponent extends React.Component {
     render(){
         return(
             <div className="RightComponent">
+
 
              <div className="rightTop">
                 <h2 style={{marginTop:"3%"}}>Name of the section in use</h2>
@@ -186,3 +188,11 @@ export default class RightComponent extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        userName: state.auth.firstName
+    }
+}
+
+export default connect(mapStateToProps) (RightComponent);
