@@ -12,7 +12,7 @@ import { connect } from  'react-redux';
 class LeftSide extends Component {
 
     render() {
-        console.log(this.state.auth);
+        // console.log(this.state.auth);
         return (
             <div className='leftSideBody'>
                 <nav className="navbar navbar-expand-lg navbar-dark static-top">

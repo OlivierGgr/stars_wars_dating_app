@@ -89,11 +89,16 @@ class RightComponent extends React.Component {
                 <div className='particlesContainer'>
                     <Particles
                         style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%"
+                            // position: "absolute",
+                            // top: 0,
+                            // left: 0,
+                            // width: "100%",
+                            // height: "100%"
+                            position: 'fixed!',
+                            top: '0px',
+                            left: '35.5%',
+                            // width: '66%',
+                            // height: '100%'
                         }}
                         params={{
                             "particles": {

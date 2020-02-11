@@ -8,13 +8,16 @@ import ModalBody from 'react-bootstrap/ModalBody'
 import ModalFooter from 'react-bootstrap/ModalFooter'
 import Button from 'react-bootstrap/Button'
 
-export default class ModalComponent extends React.Component {
+import { connect } from  'react-redux';
+
+class ModalComponent extends React.Component {
     constructor(props) {
       super(props);
       this.state = { 
         show: this.props.show,
         valueUpdated: false,
-        affiliations: []
+        affiliations: [],
+        matches : []
       };
 
       this.toggle = this.toggle.bind(this);
@@ -49,8 +52,11 @@ export default class ModalComponent extends React.Component {
 
     sendMatch(){
       this.props.isMatch(this.props.id)
-      console.log(this.props.id)
       this.toggle()
+      this.props.dispatch({
+        type : "ADD_MATCH",
+        matches: this.state.matches,
+      })
     }
 
     render() {
@@ -97,3 +103,12 @@ export default class ModalComponent extends React.Component {
       );
     }
   }
+
+  const mapStateToProps = (state) => {
+    return {
+        userName: state.auth.firstName,
+        matches: state.matches.matches
+    }
+}
+
+export default connect(mapStateToProps) (ModalComponent);
